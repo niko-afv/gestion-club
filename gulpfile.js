@@ -15,6 +15,7 @@ elixir(mix => {
     mix.sass('app.scss');
     mix.copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts');
     mix.copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts')
+    mix.copy('resources/assets/images', 'public/images')
     mix.styles([
         'resources/assets/vendor/bootstrap/css/bootstrap.css',
         'resources/assets/vendor/animate/animate.css',

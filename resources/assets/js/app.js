@@ -57,6 +57,31 @@ $(document).ready(function () {
         SmoothlyMenu();
 
     });
+  
+    $('.logout').on('click', function (event) {
+        $.post('http://127.0.0.1:8000/logout', function(response){
+            "use strict";
+            console.log(response)
+        });
+        SmoothlyMenu();
+    });
+  
+    $('.next_login').on('click', function (event) {
+        event.preventDefault();
+        $('.login_1').fadeOut(function () {
+          $('.login_2').removeClass('hidden');
+          $('.login_2').fadeIn();
+          
+          $('.club_title').text($('select[name="club"] option:selected').text());
+        });
+    });
+  
+    $('.back_login').on('click', function (event) {
+        event.preventDefault();
+        $('.login_2').fadeOut(function () {
+            $('.login_1').fadeIn();
+        });
+    });
 
     // Full height of sidebar
     function fix_height() {

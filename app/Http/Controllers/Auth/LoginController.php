@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\ClubModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -35,5 +36,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+
+    public function showLoginForm()
+    {
+        $clubes = ClubModel::activated()->get();
+
+        return view('auth.login', [
+            'clubes' => $clubes
+        ]);
     }
 }
