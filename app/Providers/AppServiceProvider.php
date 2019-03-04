@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\ILog;
+use App\LogModel;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(ILog::class, LogModel::class);
     }
 
     /**

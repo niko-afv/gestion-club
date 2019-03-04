@@ -11,7 +11,10 @@ class MiembrosTableSeeder extends Seeder
      */
     public function run()
     {
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('miembros')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         DB::table('miembros')->insert([
             'id'        =>  1,

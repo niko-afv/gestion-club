@@ -28,4 +28,8 @@ class User extends Authenticatable
     ];
 
     public function club(){return $this->belongsTo(ClubModel::class,'idUsuario','id');}
+
+    public function logs(){
+        return $this->hasMany(LogModel::class);
+    }
 }

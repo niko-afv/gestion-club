@@ -125,7 +125,7 @@ class RegisterController extends Controller
                     ->to($data['email'], $data['club'])
                     ->subject("Activación de Cuenta - Regional AMCH");
             });
-            return redirect('/register')->with(['alert'=>true,'type'=>'success', 'msg'=>'Se ha enviado un E-Mail al director del club '.$data['club'].' para que active el acceso.']);
+            return redirect('/login')->with(['alert'=>true,'type'=>'success', 'msg'=>'Se ha enviado un E-Mail al director del club '.$data['club'].' para que active el acceso.']);
         }else{
             return redirect('/register')->with(['alert'=>true,'type'=>'danger', 'msg'=> $msg]);
         }
