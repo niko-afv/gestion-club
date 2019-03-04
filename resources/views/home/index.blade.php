@@ -11,7 +11,7 @@
                                 Bienvenido a la plataforma de clubes!
                             </h1>
                             <small>
-                                It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects.
+                                Mensaje x
                             </small>
                         </div>
                     </div>
